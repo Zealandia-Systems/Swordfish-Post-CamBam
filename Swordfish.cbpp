@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PostProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="0.9.8.0">
+  <Header>{$comment} {$cbfile.name} {$date} {$endcomment}
+{$tooltable}
+{$cbfile.header}
+{$units}
+{$distancemode}
+{$velocitymode}
+{$cuttercomp(off)}
+{$toolchange(first)}
+{$clearance}</Header>
+  <ToolChange>{$clearance}
+{$spindle(off)}
+{$comment} T{$tool.index} : {$tool.diameter} {$endcomment}
+T{$tool.index} M6</ToolChange>
+  <MOP>{$comment} {$mop.name} {$endcomment}
+{$toolchange}
+{$velocitymode} {$workplane}
+{$mop.header}
+{$spindle} {$s}
+{$blocks}
+{$mop.footer}
+</MOP>
+</PostProcessor>
